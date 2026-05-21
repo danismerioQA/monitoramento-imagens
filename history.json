@@ -1,6 +1,61 @@
 {
   "runs": [
     {
+      "ts": "20260521_181125",
+      "label": "21/05/2026 18:11",
+      "data": {
+        "M1": [
+          "grafico_q1_a_20260521_180929.png",
+          "grafico_q1_b_20260521_180929.png",
+          "grafico_q1_c_20260521_180929.png",
+          "grafico_q1_d_20260521_180929.png"
+        ],
+        "M2": [
+          "grafico_q2_a_20260521_180943.png",
+          "grafico_q2_b_20260521_180943.png",
+          "grafico_q2_c_20260521_180943.png",
+          "grafico_q2_d_20260521_180943.png"
+        ],
+        "M3": [
+          "grafico_q3_20260521_180956.png"
+        ],
+        "M4": [
+          "grafico_q4_20260521_181000.png"
+        ],
+        "M5": [
+          "grafico_q5_cancelados_20260521_181006.png",
+          "grafico_q5_quebrados_20260521_181006.png"
+        ],
+        "M6": [
+          "grafico_q6_20260521_181014.png"
+        ],
+        "M7": [
+          "grafico_q7_act_fpd_20260521_181033.png",
+          "grafico_q7_act_new_20260521_181033.png",
+          "grafico_q7_act_stock_20260521_181033.png",
+          "grafico_q7_evictions_20260521_181033.png",
+          "grafico_q7_end_new_20260521_181033.png",
+          "grafico_q7_end_31_90_20260521_181033.png",
+          "grafico_q7_end_91_180_20260521_181033.png",
+          "grafico_q7_end_181_360_20260521_181033.png",
+          "grafico_q7_end_360+_20260521_181033.png",
+          "grafico_q7_outros_20260521_181033.png"
+        ],
+        "M8": [
+          "grafico_q8_act_fpd_20260521_181125.png",
+          "grafico_q8_act_new_20260521_181125.png",
+          "grafico_q8_act_stock_20260521_181125.png",
+          "grafico_q8_evictions_20260521_181125.png",
+          "grafico_q8_end_new_20260521_181125.png",
+          "grafico_q8_end_31_90_20260521_181125.png",
+          "grafico_q8_end_91_180_20260521_181125.png",
+          "grafico_q8_end_181_360_20260521_181125.png",
+          "grafico_q8_end_360+_20260521_181125.png",
+          "grafico_q8_outros_20260521_181125.png"
+        ]
+      }
+    },
+    {
       "ts": "20260521_173830",
       "label": "21/05/2026 17:38",
       "data": {
