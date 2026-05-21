@@ -38,26 +38,23 @@ header h1{font-size:.95rem;font-weight:600;color:#e6edf3}
     <label>Execução:</label>
     <select id="run-sel" onchange="selecionarRun(this.value)"></select>
   </div>
-  <span class="meta" id="meta-ts">Shell: 21/05/2026 18:01</span>
+  <span class="meta" id="meta-ts">Shell: 21/05/2026 18:03</span>
 </header>
 <nav class="tabs" id="tabs"></nav>
 <main id="main"><p class="loading">Carregando dados...</p></main>
 <script>
 const GRUPOS = {"carteira": {"label": "🏦 Carteira Atual", "ms": ["M1", "M6"]}, "dist_foto": {"label": "📸 Distribuições — Foto Atual", "ms": ["M7"]}, "dist_dia": {"label": "📅 Distribuições no Dia", "ms": ["M2", "M8"]}, "acordos": {"label": "🤝 Acordos e Pagamentos", "ms": ["M3", "M4", "M5"]}};
 const META   = {"M1": {"titulo": "Contratos por Segmento × Assessoria — foto atual"}, "M2": {"titulo": "Entradas no dia por Segmento × Assessoria"}, "M3": {"titulo": "Pagamentos por Meio — 45 dias"}, "M4": {"titulo": "Acordos Criados por Assessoria — 45 dias"}, "M5": {"titulo": "Acordos Cancelados e Quebrados — 45 dias"}, "M6": {"titulo": "Distribuição para Assessorias — foto atual"}, "M7": {"titulo": "Distribuição por Assessoria × Audiência — foto atual"}, "M8": {"titulo": "Distribuições do dia por Assessoria × Audiência"}};
-const BASE     = "https://danismerioQA.github.io/monitoramento-imagens/imagens";
-const API_HIST = "https://api.github.com/repos/danismerioQA/monitoramento-imagens/contents/history.json";
-const BRANCH   = "main";
+const BASE = "https://danismerioQA.github.io/monitoramento-imagens/imagens";
 
 let runAtual  = null;
 let temaAtual = null;
 
 async function init() {
   try {
-    const resp = await fetch(API_HIST + '?ref=' + BRANCH + '&cb=' + Date.now());
+    const resp = await fetch('./history.json?cb=' + Date.now());
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    const file = await resp.json();
-    const data = JSON.parse(atob(file.content.replace(/\n/g, '')));
+    const data = await resp.json();
     const runs = data.runs || [];
     if (!runs.length) {
       document.getElementById('main').innerHTML =
