@@ -38,7 +38,7 @@ header h1{font-size:.95rem;font-weight:600;color:#e6edf3}
     <label>Execução:</label>
     <select id="run-sel" onchange="selecionarRun(this.value)"></select>
   </div>
-  <span class="meta" id="meta-ts">Shell: 21/05/2026 17:57</span>
+  <span class="meta" id="meta-ts">Shell: 21/05/2026 18:01</span>
 </header>
 <nav class="tabs" id="tabs"></nav>
 <main id="main"><p class="loading">Carregando dados...</p></main>
@@ -57,8 +57,7 @@ async function init() {
     const resp = await fetch(API_HIST + '?ref=' + BRANCH + '&cb=' + Date.now());
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const file = await resp.json();
-    const data = JSON.parse(atob(file.content.replace(/
-/g, '')));
+    const data = JSON.parse(atob(file.content.replace(/\n/g, '')));
     const runs = data.runs || [];
     if (!runs.length) {
       document.getElementById('main').innerHTML =
