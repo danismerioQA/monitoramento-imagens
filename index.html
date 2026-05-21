@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- gen:20260521_173830 -->
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -28,6 +27,7 @@ header h1{font-size:.95rem;font-weight:600;color:#e6edf3}
 .grid a:hover{border-color:#58a6ff}
 .grid img{width:100%;height:auto;display:block;background:#161b22}
 .no-data{color:#8b949e;padding:20px 0;font-style:italic;font-size:.85rem}
+.loading{color:#8b949e;padding:40px 20px;text-align:center;font-size:.9rem}
 @media(max-width:600px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -38,53 +38,68 @@ header h1{font-size:.95rem;font-weight:600;color:#e6edf3}
     <label>Execução:</label>
     <select id="run-sel" onchange="selecionarRun(this.value)"></select>
   </div>
-  <span class="meta">Página gerada: 21/05/2026 17:43</span>
+  <span class="meta" id="meta-ts">Shell: 21/05/2026 17:50</span>
 </header>
 <nav class="tabs" id="tabs"></nav>
-<main id="main"></main>
+<main id="main"><p class="loading">Carregando dados...</p></main>
 <script>
-const RUNS   = [{"ts": "20260521_173830", "label": "21/05/2026 17:38", "data": {"M1": ["grafico_q1_a_20260521_173632.png", "grafico_q1_b_20260521_173632.png", "grafico_q1_c_20260521_173632.png", "grafico_q1_d_20260521_173632.png"], "M2": ["grafico_q2_a_20260521_173646.png", "grafico_q2_b_20260521_173646.png", "grafico_q2_c_20260521_173646.png", "grafico_q2_d_20260521_173646.png"], "M3": ["grafico_q3_20260521_173659.png"], "M4": ["grafico_q4_20260521_173704.png"], "M5": ["grafico_q5_cancelados_20260521_173710.png", "grafico_q5_quebrados_20260521_173710.png"], "M6": ["grafico_q6_20260521_173718.png"], "M7": ["grafico_q7_act_fpd_20260521_173738.png", "grafico_q7_act_new_20260521_173738.png", "grafico_q7_act_stock_20260521_173738.png", "grafico_q7_evictions_20260521_173738.png", "grafico_q7_end_new_20260521_173738.png", "grafico_q7_end_31_90_20260521_173738.png", "grafico_q7_end_91_180_20260521_173738.png", "grafico_q7_end_181_360_20260521_173738.png", "grafico_q7_end_360+_20260521_173738.png", "grafico_q7_outros_20260521_173738.png"], "M8": ["grafico_q8_act_fpd_20260521_173830.png", "grafico_q8_act_new_20260521_173830.png", "grafico_q8_act_stock_20260521_173830.png", "grafico_q8_evictions_20260521_173830.png", "grafico_q8_end_new_20260521_173830.png", "grafico_q8_end_31_90_20260521_173830.png", "grafico_q8_end_91_180_20260521_173830.png", "grafico_q8_end_181_360_20260521_173830.png", "grafico_q8_end_360+_20260521_173830.png", "grafico_q8_outros_20260521_173830.png"]}}, {"ts": "20260521_173051", "label": "21/05/2026 17:30", "data": {"M1": ["grafico_q1_a_20260521_172853.png", "grafico_q1_b_20260521_172853.png", "grafico_q1_c_20260521_172853.png", "grafico_q1_d_20260521_172853.png"], "M2": ["grafico_q2_a_20260521_172907.png", "grafico_q2_b_20260521_172907.png", "grafico_q2_c_20260521_172907.png", "grafico_q2_d_20260521_172907.png"], "M3": ["grafico_q3_20260521_172921.png"], "M4": ["grafico_q4_20260521_172925.png"], "M5": ["grafico_q5_cancelados_20260521_172931.png", "grafico_q5_quebrados_20260521_172931.png"], "M6": ["grafico_q6_20260521_172938.png"], "M7": ["grafico_q7_act_fpd_20260521_173000.png", "grafico_q7_act_new_20260521_173000.png", "grafico_q7_act_stock_20260521_173000.png", "grafico_q7_evictions_20260521_173000.png", "grafico_q7_end_new_20260521_173000.png", "grafico_q7_end_31_90_20260521_173000.png", "grafico_q7_end_91_180_20260521_173000.png", "grafico_q7_end_181_360_20260521_173000.png", "grafico_q7_end_360+_20260521_173000.png", "grafico_q7_outros_20260521_173000.png"], "M8": ["grafico_q8_act_fpd_20260521_173051.png", "grafico_q8_act_new_20260521_173051.png", "grafico_q8_act_stock_20260521_173051.png", "grafico_q8_evictions_20260521_173051.png", "grafico_q8_end_new_20260521_173051.png", "grafico_q8_end_31_90_20260521_173051.png", "grafico_q8_end_91_180_20260521_173051.png", "grafico_q8_end_181_360_20260521_173051.png", "grafico_q8_end_360+_20260521_173051.png", "grafico_q8_outros_20260521_173051.png"]}}, {"ts": "20260521_171441", "label": "21/05/2026 17:14", "data": {"M1": ["grafico_q1_a_20260521_171241.png", "grafico_q1_b_20260521_171241.png", "grafico_q1_c_20260521_171241.png", "grafico_q1_d_20260521_171241.png"], "M2": ["grafico_q2_a_20260521_171254.png", "grafico_q2_b_20260521_171254.png", "grafico_q2_c_20260521_171254.png", "grafico_q2_d_20260521_171254.png"], "M3": ["grafico_q3_20260521_171307.png"], "M4": ["grafico_q4_20260521_171312.png"], "M5": ["grafico_q5_cancelados_20260521_171318.png", "grafico_q5_quebrados_20260521_171318.png"], "M6": ["grafico_q6_20260521_171325.png"], "M7": ["grafico_q7_act_fpd_20260521_171347.png", "grafico_q7_act_new_20260521_171347.png", "grafico_q7_act_stock_20260521_171347.png", "grafico_q7_evictions_20260521_171347.png", "grafico_q7_end_new_20260521_171347.png", "grafico_q7_end_31_90_20260521_171347.png", "grafico_q7_end_91_180_20260521_171347.png", "grafico_q7_end_181_360_20260521_171347.png", "grafico_q7_end_360+_20260521_171347.png", "grafico_q7_outros_20260521_171347.png"], "M8": ["grafico_q8_act_fpd_20260521_171441.png", "grafico_q8_act_new_20260521_171441.png", "grafico_q8_act_stock_20260521_171441.png", "grafico_q8_evictions_20260521_171441.png", "grafico_q8_end_new_20260521_171441.png", "grafico_q8_end_31_90_20260521_171441.png", "grafico_q8_end_91_180_20260521_171441.png", "grafico_q8_end_181_360_20260521_171441.png", "grafico_q8_end_360+_20260521_171441.png", "grafico_q8_outros_20260521_171441.png"]}}];
 const GRUPOS = {"carteira": {"label": "🏦 Carteira Atual", "ms": ["M1", "M6"]}, "dist_foto": {"label": "📸 Distribuições — Foto Atual", "ms": ["M7"]}, "dist_dia": {"label": "📅 Distribuições no Dia", "ms": ["M2", "M8"]}, "acordos": {"label": "🤝 Acordos e Pagamentos", "ms": ["M3", "M4", "M5"]}};
 const META   = {"M1": {"titulo": "Contratos por Segmento × Assessoria — foto atual"}, "M2": {"titulo": "Entradas no dia por Segmento × Assessoria"}, "M3": {"titulo": "Pagamentos por Meio — 45 dias"}, "M4": {"titulo": "Acordos Criados por Assessoria — 45 dias"}, "M5": {"titulo": "Acordos Cancelados e Quebrados — 45 dias"}, "M6": {"titulo": "Distribuição para Assessorias — foto atual"}, "M7": {"titulo": "Distribuição por Assessoria × Audiência — foto atual"}, "M8": {"titulo": "Distribuições do dia por Assessoria × Audiência"}};
 const BASE   = "https://danismerioQA.github.io/monitoramento-imagens/imagens";
+const HIST   = "https://raw.githubusercontent.com/danismerioQA/monitoramento-imagens/main/history.json";
 
 let runAtual  = null;
 let temaAtual = null;
 
-function init() {
-  const sel = document.getElementById('run-sel');
-  RUNS.forEach((r, i) => {
-    const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = r.label;
-    sel.appendChild(opt);
-  });
-  if (RUNS.length) selecionarRun(0);
+async function init() {
+  try {
+    const resp = await fetch(HIST + '?cb=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    const runs = data.runs || [];
+    if (!runs.length) {
+      document.getElementById('main').innerHTML =
+        '<p class="no-data" style="padding:40px 20px">Nenhuma execução registrada ainda.</p>';
+      return;
+    }
+    const sel = document.getElementById('run-sel');
+    runs.forEach((r, i) => {
+      const opt = document.createElement('option');
+      opt.value = i; opt.textContent = r.label;
+      sel.appendChild(opt);
+    });
+    selecionarRun(0, runs);
+  } catch(e) {
+    document.getElementById('main').innerHTML =
+      '<p class="no-data" style="padding:40px 20px;color:#f85149">Erro ao carregar dados: ' + e.message + '</p>';
+  }
 }
 
-function selecionarRun(idx) {
-  runAtual = RUNS[parseInt(idx)];
+function selecionarRun(idx, runs) {
+  const allRuns = runs || window._runs;
+  if (!allRuns) return;
+  window._runs = allRuns;
+  runAtual = allRuns[parseInt(idx)];
   document.getElementById('run-sel').value = idx;
+  document.getElementById('meta-ts').textContent = 'Dados: ' + runAtual.label;
   renderTemas();
 }
 
 function renderTemas() {
   const nav  = document.getElementById('tabs');
   const main = document.getElementById('main');
-  nav.innerHTML  = '';
-  main.innerHTML = '';
+  nav.innerHTML = ''; main.innerHTML = '';
   const keys = Object.keys(GRUPOS);
   keys.forEach((key, i) => {
     const g   = GRUPOS[key];
     const btn = document.createElement('button');
-    btn.className   = 'tab' + (i === 0 ? ' active' : '');
-    btn.id          = 'tab-' + key;
-    btn.textContent = g.label;
-    btn.onclick     = () => showTema(key);
+    btn.className = 'tab' + (i === 0 ? ' active' : '');
+    btn.id = 'tab-' + key; btn.textContent = g.label;
+    btn.onclick = () => showTema(key);
     nav.appendChild(btn);
     const panel = document.createElement('div');
     panel.className = 'panel' + (i === 0 ? ' active' : '');
-    panel.id        = 'panel-' + key;
+    panel.id = 'panel-' + key;
     panel.innerHTML = renderPanel(g.ms);
     main.appendChild(panel);
   });
@@ -97,12 +112,12 @@ function renderPanel(ms) {
     const pngs = (runAtual && runAtual.data && runAtual.data[m]) || [];
     const imgs = pngs.length
       ? pngs.map(p =>
-          `<a href="${BASE}/${p}" target="_blank">` +
-          `<img src="${BASE}/${p}" alt="${m}" loading="lazy"></a>`
+          '<a href="' + BASE + '/' + p + '" target="_blank">' +
+          '<img src="' + BASE + '/' + p + '" alt="' + m + '" loading="lazy"></a>'
         ).join('')
       : '<p class="no-data">Sem dados para esta execução.</p>';
-    return `<div class="m-block"><div class="m-title">${m} — ${info.titulo || m}</div>` +
-           `<div class="grid">${imgs}</div></div>`;
+    return '<div class="m-block"><div class="m-title">' + m + ' — ' + (info.titulo || m) + '</div>' +
+           '<div class="grid">' + imgs + '</div></div>';
   }).join('');
 }
 
