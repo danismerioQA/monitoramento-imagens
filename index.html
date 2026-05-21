@@ -7,122 +7,113 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-header{background:#161b22;border-bottom:1px solid #30363d;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-header h1{font-size:1rem;font-weight:600;color:#e6edf3}
-header .meta{font-size:.78rem;color:#8b949e}
+header{background:#161b22;border-bottom:1px solid #30363d;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header h1{font-size:.95rem;font-weight:600;color:#e6edf3}
+.run-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.run-bar label{font-size:.78rem;color:#8b949e;white-space:nowrap}
+.run-bar select{background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:6px;padding:5px 10px;font-size:.82rem;cursor:pointer}
+.run-bar select:focus{outline:none;border-color:#58a6ff}
+.meta{font-size:.75rem;color:#8b949e;white-space:nowrap}
 .tabs{background:#161b22;border-bottom:1px solid #30363d;padding:0 16px;display:flex;gap:2px;overflow-x:auto}
-.tab{background:none;border:none;color:#8b949e;padding:11px 16px;cursor:pointer;font-size:.88rem;font-weight:500;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s}
+.tab{background:none;border:none;color:#8b949e;padding:11px 18px;cursor:pointer;font-size:.88rem;font-weight:500;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s}
 .tab:hover{color:#c9d1d9}
 .tab.active{color:#58a6ff;border-bottom-color:#1f6feb}
-.panel{display:none;padding:24px}
+.panel{display:none;padding:20px}
 .panel.active{display:block}
-.panel h2{font-size:.95rem;font-weight:600;color:#e6edf3;margin-bottom:4px}
-.ts{font-size:.78rem;color:#8b949e;display:block;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:14px}
+.m-block{margin-bottom:28px}
+.m-title{font-size:.9rem;font-weight:600;color:#e6edf3;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:12px}
 .grid a{display:block;border-radius:8px;overflow:hidden;border:1px solid #30363d;transition:border-color .15s}
 .grid a:hover{border-color:#58a6ff}
 .grid img{width:100%;height:auto;display:block;background:#161b22}
-.no-data{color:#8b949e;padding:28px 0;font-style:italic}
+.no-data{color:#8b949e;padding:20px 0;font-style:italic;font-size:.85rem}
 @media(max-width:600px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
   <h1>Monitoramento Diário — Cyber/QuintoAndar</h1>
-  <span class="meta">Gerado: 21/05/2026 17:16</span>
+  <div class="run-bar">
+    <label>Execução:</label>
+    <select id="run-sel" onchange="selecionarRun(this.value)"></select>
+  </div>
+  <span class="meta">Página gerada: 21/05/2026 17:28</span>
 </header>
-<nav class="tabs">
-<button class="tab active" onclick="show('m1')" id="tab-m1">M1</button>
-<button class="tab " onclick="show('m2')" id="tab-m2">M2</button>
-<button class="tab " onclick="show('m3')" id="tab-m3">M3</button>
-<button class="tab " onclick="show('m4')" id="tab-m4">M4</button>
-<button class="tab " onclick="show('m5')" id="tab-m5">M5</button>
-<button class="tab " onclick="show('m6')" id="tab-m6">M6</button>
-<button class="tab " onclick="show('m7')" id="tab-m7">M7</button>
-<button class="tab " onclick="show('m8')" id="tab-m8">M8</button>
-</nav>
-<main>
-<div id="panel-m1" class="panel active">
-  <h2>M1 — Contratos por Segmento × Assessoria — foto atual</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:12</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_a_20260521_171241.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_a_20260521_171241.png" alt="M1" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_b_20260521_171241.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_b_20260521_171241.png" alt="M1" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_c_20260521_171241.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_c_20260521_171241.png" alt="M1" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_d_20260521_171241.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q1_d_20260521_171241.png" alt="M1" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m2" class="panel ">
-  <h2>M2 — Entradas no dia por Segmento × Assessoria</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:12</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_a_20260521_171254.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_a_20260521_171254.png" alt="M2" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_b_20260521_171254.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_b_20260521_171254.png" alt="M2" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_c_20260521_171254.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_c_20260521_171254.png" alt="M2" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_d_20260521_171254.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q2_d_20260521_171254.png" alt="M2" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m3" class="panel ">
-  <h2>M3 — Pagamentos por Meio — 45 dias</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:13</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q3_20260521_171307.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q3_20260521_171307.png" alt="M3" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m4" class="panel ">
-  <h2>M4 — Acordos Criados por Assessoria — 45 dias</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:13</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q4_20260521_171312.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q4_20260521_171312.png" alt="M4" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m5" class="panel ">
-  <h2>M5 — Acordos Cancelados e Quebrados — 45 dias</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:13</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q5_cancelados_20260521_171318.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q5_cancelados_20260521_171318.png" alt="M5" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q5_quebrados_20260521_171318.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q5_quebrados_20260521_171318.png" alt="M5" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m6" class="panel ">
-  <h2>M6 — Distribuição para Assessorias — foto atual</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:13</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q6_20260521_171325.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q6_20260521_171325.png" alt="M6" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m7" class="panel ">
-  <h2>M7 — Distribuição por Assessoria × Audiência — foto atual</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:13</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_act_fpd_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_act_fpd_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_act_new_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_act_new_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_act_stock_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_act_stock_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_evictions_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_evictions_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_new_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_new_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_31_90_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_31_90_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_91_180_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_91_180_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_181_360_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_181_360_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_360+_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_end_360+_20260521_171347.png" alt="M7" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_outros_20260521_171347.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q7_outros_20260521_171347.png" alt="M7" loading="lazy"></a>
-</div>
-</div>
-<div id="panel-m8" class="panel ">
-  <h2>M8 — Distribuições do dia por Assessoria × Audiência</h2>
-  <span class="ts">Atualizado: 21/05/2026 17:14</span>
-  <div class="grid"><a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_act_fpd_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_act_fpd_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_act_new_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_act_new_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_act_stock_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_act_stock_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_evictions_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_evictions_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_new_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_new_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_31_90_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_31_90_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_91_180_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_91_180_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_181_360_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_181_360_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_360+_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_end_360+_20260521_171441.png" alt="M8" loading="lazy"></a>
-<a href="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_outros_20260521_171441.png" target="_blank"><img src="https://danismerioQA.github.io/monitoramento-imagens/imagens/grafico_q8_outros_20260521_171441.png" alt="M8" loading="lazy"></a>
-</div>
-</div>
-</main>
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
 <script>
-function show(id){
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('panel-'+id).classList.add('active');
-  document.getElementById('tab-'+id).classList.add('active');
+const RUNS   = [{"ts": "20260521_171441", "label": "21/05/2026 17:14", "data": {"M1": ["grafico_q1_a_20260521_171241.png", "grafico_q1_b_20260521_171241.png", "grafico_q1_c_20260521_171241.png", "grafico_q1_d_20260521_171241.png"], "M2": ["grafico_q2_a_20260521_171254.png", "grafico_q2_b_20260521_171254.png", "grafico_q2_c_20260521_171254.png", "grafico_q2_d_20260521_171254.png"], "M3": ["grafico_q3_20260521_171307.png"], "M4": ["grafico_q4_20260521_171312.png"], "M5": ["grafico_q5_cancelados_20260521_171318.png", "grafico_q5_quebrados_20260521_171318.png"], "M6": ["grafico_q6_20260521_171325.png"], "M7": ["grafico_q7_act_fpd_20260521_171347.png", "grafico_q7_act_new_20260521_171347.png", "grafico_q7_act_stock_20260521_171347.png", "grafico_q7_evictions_20260521_171347.png", "grafico_q7_end_new_20260521_171347.png", "grafico_q7_end_31_90_20260521_171347.png", "grafico_q7_end_91_180_20260521_171347.png", "grafico_q7_end_181_360_20260521_171347.png", "grafico_q7_end_360+_20260521_171347.png", "grafico_q7_outros_20260521_171347.png"], "M8": ["grafico_q8_act_fpd_20260521_171441.png", "grafico_q8_act_new_20260521_171441.png", "grafico_q8_act_stock_20260521_171441.png", "grafico_q8_evictions_20260521_171441.png", "grafico_q8_end_new_20260521_171441.png", "grafico_q8_end_31_90_20260521_171441.png", "grafico_q8_end_91_180_20260521_171441.png", "grafico_q8_end_181_360_20260521_171441.png", "grafico_q8_end_360+_20260521_171441.png", "grafico_q8_outros_20260521_171441.png"]}}];
+const GRUPOS = {"carteira": {"label": "🏦 Carteira Atual", "ms": ["M1", "M6"]}, "dist_foto": {"label": "📸 Distribuições — Foto Atual", "ms": ["M7"]}, "dist_dia": {"label": "📅 Distribuições no Dia", "ms": ["M2", "M8"]}, "acordos": {"label": "🤝 Acordos e Pagamentos", "ms": ["M3", "M4", "M5"]}};
+const META   = {"M1": {"titulo": "Contratos por Segmento × Assessoria — foto atual"}, "M2": {"titulo": "Entradas no dia por Segmento × Assessoria"}, "M3": {"titulo": "Pagamentos por Meio — 45 dias"}, "M4": {"titulo": "Acordos Criados por Assessoria — 45 dias"}, "M5": {"titulo": "Acordos Cancelados e Quebrados — 45 dias"}, "M6": {"titulo": "Distribuição para Assessorias — foto atual"}, "M7": {"titulo": "Distribuição por Assessoria × Audiência — foto atual"}, "M8": {"titulo": "Distribuições do dia por Assessoria × Audiência"}};
+const BASE   = "https://danismerioQA.github.io/monitoramento-imagens/imagens";
+
+let runAtual  = null;
+let temaAtual = null;
+
+function init() {
+  const sel = document.getElementById('run-sel');
+  RUNS.forEach((r, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = r.label;
+    sel.appendChild(opt);
+  });
+  if (RUNS.length) selecionarRun(0);
 }
+
+function selecionarRun(idx) {
+  runAtual = RUNS[parseInt(idx)];
+  document.getElementById('run-sel').value = idx;
+  renderTemas();
+}
+
+function renderTemas() {
+  const nav  = document.getElementById('tabs');
+  const main = document.getElementById('main');
+  nav.innerHTML  = '';
+  main.innerHTML = '';
+  const keys = Object.keys(GRUPOS);
+  keys.forEach((key, i) => {
+    const g   = GRUPOS[key];
+    const btn = document.createElement('button');
+    btn.className   = 'tab' + (i === 0 ? ' active' : '');
+    btn.id          = 'tab-' + key;
+    btn.textContent = g.label;
+    btn.onclick     = () => showTema(key);
+    nav.appendChild(btn);
+    const panel = document.createElement('div');
+    panel.className = 'panel' + (i === 0 ? ' active' : '');
+    panel.id        = 'panel-' + key;
+    panel.innerHTML = renderPanel(g.ms);
+    main.appendChild(panel);
+  });
+  temaAtual = keys[0];
+}
+
+function renderPanel(ms) {
+  return ms.map(m => {
+    const info = META[m] || {};
+    const pngs = (runAtual && runAtual.data && runAtual.data[m]) || [];
+    const imgs = pngs.length
+      ? pngs.map(p =>
+          `<a href="${BASE}/${p}" target="_blank">` +
+          `<img src="${BASE}/${p}" alt="${m}" loading="lazy"></a>`
+        ).join('')
+      : '<p class="no-data">Sem dados para esta execução.</p>';
+    return `<div class="m-block"><div class="m-title">${m} — ${info.titulo || m}</div>` +
+           `<div class="grid">${imgs}</div></div>`;
+  }).join('');
+}
+
+function showTema(key) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t   => t.classList.remove('active'));
+  document.getElementById('panel-' + key).classList.add('active');
+  document.getElementById('tab-'   + key).classList.add('active');
+  temaAtual = key;
+}
+
+init();
 </script>
 </body>
 </html>
