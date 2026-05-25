@@ -1,6 +1,60 @@
 {
   "runs": [
     {
+      "ts": "20260525_171144",
+      "label": "25/05/2026 17:11",
+      "data": {
+        "M1": [
+          "grafico_q1_a_20260525_170848.png",
+          "grafico_q1_b_20260525_170848.png",
+          "grafico_q1_c_20260525_170848.png",
+          "grafico_q1_d_20260525_170848.png"
+        ],
+        "M2": [
+          "grafico_q2_a_20260525_170910.png",
+          "grafico_q2_b_20260525_170910.png",
+          "grafico_q2_c_20260525_170910.png",
+          "grafico_q2_d_20260525_170910.png"
+        ],
+        "M3": [
+          "grafico_q3_20260525_170936.png"
+        ],
+        "M4": [
+          "grafico_q4_20260525_171001.png"
+        ],
+        "M5": [
+          "grafico_q5_cancelados_20260525_171026.png",
+          "grafico_q5_quebrados_20260525_171026.png"
+        ],
+        "M6": [
+          "grafico_q6_20260525_171053.png"
+        ],
+        "M7": [
+          "grafico_q7_act_fpd_20260525_171120.png",
+          "grafico_q7_act_new_20260525_171120.png",
+          "grafico_q7_act_stock_20260525_171120.png",
+          "grafico_q7_evictions_20260525_171120.png",
+          "grafico_q7_end_new_20260525_171120.png",
+          "grafico_q7_end_31_90_20260525_171120.png",
+          "grafico_q7_end_91_180_20260525_171120.png",
+          "grafico_q7_end_181_360_20260525_171120.png",
+          "grafico_q7_end_360+_20260525_171120.png",
+          "grafico_q7_outros_20260525_171120.png"
+        ],
+        "M8": [
+          "grafico_q8_act_fpd_20260525_171144.png",
+          "grafico_q8_act_new_20260525_171144.png",
+          "grafico_q8_act_stock_20260525_171144.png",
+          "grafico_q8_evictions_20260525_171144.png",
+          "grafico_q8_end_new_20260525_171144.png",
+          "grafico_q8_end_31_90_20260525_171144.png",
+          "grafico_q8_end_91_180_20260525_171144.png",
+          "grafico_q8_end_181_360_20260525_171144.png",
+          "grafico_q8_end_360+_20260525_171144.png"
+        ]
+      }
+    },
+    {
       "ts": "20260525_092222",
       "label": "25/05/2026 09:22",
       "data": {
